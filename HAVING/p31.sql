@@ -4,4 +4,4 @@ SELECT DISTINCT CustomerID
 		NOT IN
         (SELECT CustomerID 
 			FROM orders
-			WHERE EmployeeID = 4) 
+			WHERE EmployeeID = 4);
