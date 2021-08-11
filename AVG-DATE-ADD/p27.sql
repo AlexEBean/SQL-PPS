@@ -1,7 +1,7 @@
 10806
 
 
--- This code helped be find it.
+-- This code helped me find it.
 SELECT
  OrderID, OrderDate, ShipCountry
 FROM Orders
