@@ -3,5 +3,6 @@ SELECT o.CustomerID, o.OrderID AS InitialOrderID, DATE(o.orderDate) AS InitialOr
     JOIN orders o
 		ON c.CustomerID = o.CustomerID
 	JOIN orders od
-		ON DATEDIFF(od.OrderDate, o.OrderDate) BETWEEN 1 AND 5 AND o.CustomerID = od.CustomerID
-	ORDER BY c.CustomerID;
+		ON o.CustomerID = od.CustomerID
+	WHERE TIMESTAMPDIFF(SECOND, o.OrderDate, od.OrderDate) BETWEEN 1 AND 432000 OR DATEDIFF(od.OrderDate, o.OrderDate) = 5
+	ORDER BY c.CustomerID, InitialOrderID;
